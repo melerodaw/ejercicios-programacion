@@ -74,17 +74,17 @@ public class Vehiculo {
 // Declaración toString() (con @Override)
     @Override
     public String toString() {
-        return "Vehiculo{" + 
-                "matricula=" + matricula + 
-                ", marca=" + marca + 
-                ", modelo=" + modelo + 
-                ", cocheDisponible=" + cocheDisponible + '}';
-    }
+        String cadena = "Matricula: " + matricula +
+                        ", Marca: " + marca +
+                        ", Modelo: " + modelo +
+                        ", Disponible: ";
 
-    
+        if (cocheDisponible) {
+            cadena += "Si";
+        } else {
+            cadena += "No";
+        }
 
-
-    
-
-    
+        return cadena;
+        }
 }
