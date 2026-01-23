@@ -27,13 +27,27 @@ public class Cliente {
     
     //Metodos
     public void ingresar(double saldo, double dinero){
-        saldo += dinero;
-        System.out.println("Operacion realizada con exito");
+        // que el ingreso sea > 0.
+        if(dinero <= 0){
+            System.out.println("Debes introducir una cantidad superior a 0.");
+        } else {
+            saldo += dinero;
+            this.account.setSaldo(saldo);
+            System.out.println("Operacion realizada con exito.");
+        }
     }
     
     public void retirar(double saldo, double dinero){
-        saldo -= dinero;
-        System.out.println("Operacion realizada con exito");
+        // que saldo sea >= dinero a retirar. retirada numero positivo        
+        if(saldo < dinero){
+            System.out.println("Operacion cancelada: no puedes retirar mas de lo que tienes acumulado en la cuenta.");
+        }else if(dinero <= 0){
+            System.out.println("Debes introducir una cantidad superior a 0.");
+        }else{
+            saldo -= dinero;
+            this.account.setSaldo(saldo);
+            System.out.println("Operacion realizada con exito");
+        }
 }
     
     public void consultar(double saldo){
