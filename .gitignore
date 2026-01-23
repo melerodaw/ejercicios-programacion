@@ -1,2 +1,11 @@
-/ejercicio1/nbproject/private/
-/ejercicio2/nbproject/private/
+# Ignorar configuraciones locales de usuario
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+
+# Ignorar resultados de compilación
+**/build/
+**/dist/
+
+# Archivos de log
+*.log
