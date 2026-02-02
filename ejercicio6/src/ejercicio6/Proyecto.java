@@ -48,7 +48,4 @@ public class Proyecto {
         return "Proyecto{" + "nombre=" + nombre + ", presupuestoAsignado=" + presupuestoAsignado + '}';
     }
     
-    
-    
-    
 }
