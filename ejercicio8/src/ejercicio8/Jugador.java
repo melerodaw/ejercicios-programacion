@@ -44,7 +44,7 @@ public class Jugador {
     }
 
     void subirNivel(){
-        
+        this.nivel++;
     }
     
     @Override

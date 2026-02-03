@@ -54,10 +54,6 @@ public class Participacion {
     public void setProyecto(Proyecto proyecto) {
         this.proyecto = proyecto;
     }
-
-    void asignarEmpleado(Empleado e, Proyecto p){
-        
-    }
     
     double calcularCosteTotal(String nombreProyecto){
         double costeTotal = 0;

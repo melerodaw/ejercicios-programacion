@@ -44,10 +44,27 @@ public class Partida {
     }
 
     void añadirJugador(Jugador j){
+        // crear array
+        Jugador[] nuevoArray = new Jugador[jugadores.length+1];
         
+        // copiar el array
+        for(int i = 0; i < jugadores.length; i++){
+            nuevoArray[i] = jugadores[i];
+        }
+        
+        // agregar el nuevo jugador
+        nuevoArray[nuevoArray.length-1] = j;
+        
+        // guardar el nuevo array donde estaba el anterior
+        this.jugadores = nuevoArray;
+        
+        System.out.println("Jugador añadido.");
     }
     void finalizarPartida(){
-        
+        for(int i = 0; i < jugadores.length; i++){
+            jugadores[i].subirNivel();
+        }        
+        System.out.println("Partida finalizada.");
     }
     
     @Override
