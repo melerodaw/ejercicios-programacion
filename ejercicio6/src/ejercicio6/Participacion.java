@@ -11,24 +11,20 @@ package ejercicio6;
 public class Participacion {
     private double horasTrabajadas;
     private Empleado empleado;
-    private Proyecto proyecto;
 
     public Participacion() {
         this.horasTrabajadas = 0;
         this.empleado = null;
-        this.proyecto = null;
     }
     
-    public Participacion(double horasTrabajadas, Empleado empleado, Proyecto proyecto) {
+    public Participacion(double horasTrabajadas, Empleado empleado) {
         this.horasTrabajadas = horasTrabajadas;
         this.empleado = empleado;
-        this.proyecto = proyecto;
     }
     
     public Participacion(Participacion p1) {
         this.horasTrabajadas = p1.horasTrabajadas;
         this.empleado = p1.empleado;
-        this.proyecto = p1.proyecto;
     }
 
     public double getHorasTrabajadas() {
@@ -47,23 +43,12 @@ public class Participacion {
         this.empleado = empleado;
     }
 
-    public Proyecto getProyecto() {
-        return proyecto;
-    }
-
     public void setProyecto(Proyecto proyecto) {
-        this.proyecto = proyecto;
-    }
-    
-    double calcularCosteTotal(String nombreProyecto){
-        double costeTotal = 0;
-        
-        return costeTotal;
     }
     
     @Override
     public String toString() {
-        return "Participacion{" + "horasTrabajadas=" + horasTrabajadas + ", empleado=" + empleado + ", proyecto=" + proyecto + '}';
+        return "Participacion{" + "horasTrabajadas=" + horasTrabajadas + ", empleado=" + empleado + '}';
     }
     
     
