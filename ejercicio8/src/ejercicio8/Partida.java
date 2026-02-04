@@ -44,21 +44,24 @@ public class Partida {
     }
 
     void añadirJugador(Jugador j){
-        // crear array
-        Jugador[] nuevoArray = new Jugador[jugadores.length+1];
         
-        // copiar el array
-        for(int i = 0; i < jugadores.length; i++){
-            nuevoArray[i] = jugadores[i];
+        if(this.jugadores == null) {
+            this.jugadores = new Jugador[1];
+            this.jugadores[0] = j;
+        } else {
+            // crear array auxiliar
+            Jugador[] nuevoArray = new Jugador[jugadores.length+1];
+            // copiar el array
+            for(int i = 0; i < jugadores.length; i++){
+                nuevoArray[i] = jugadores[i];
+            }
+            // agregar el nuevo jugador
+            nuevoArray[nuevoArray.length-1] = j;
+            // guardar el nuevo array donde estaba el anterior
+            this.jugadores = nuevoArray;
+            System.out.println("Jugador añadido.");
         }
-        
-        // agregar el nuevo jugador
-        nuevoArray[nuevoArray.length-1] = j;
-        
-        // guardar el nuevo array donde estaba el anterior
-        this.jugadores = nuevoArray;
-        
-        System.out.println("Jugador añadido.");
+            
     }
     void finalizarPartida(){
         for(int i = 0; i < jugadores.length; i++){
@@ -67,10 +70,34 @@ public class Partida {
         System.out.println("Partida finalizada.");
     }
     
-    @Override
+    // no podemos usar este toString habiendo un array, porque mostraria su direccion de memoria
+    /*
+        @Override
     public String toString() {
         return "Partida{" + "duracion=" + duracion + ", jugadores=" + jugadores + '}';
     }
+    */
+
+    @Override
+    public String toString() {
+    String nombresJugadores = "";
+    
+    if (this.jugadores != null) {
+        for (int i = 0; i < this.jugadores.length; i++) {
+            // agregamos el nombre de cada jugador a la variable
+            nombresJugadores += this.jugadores[i].getNombre(); 
+            
+            // meto separacion si no es el ultimo
+            if(i < this.jugadores.length - 1){
+                nombresJugadores += ", ";
+            }
+        }
+    } else {
+        nombresJugadores = "Sin jugadores";
+    }
+
+    return "Partida { Duracion: " + duracion + ", Jugadores={" + nombresJugadores + "} }";
+}
     
     
 }

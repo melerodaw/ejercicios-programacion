@@ -14,7 +14,7 @@ public class Jugador {
 
     public Jugador() {
         this.nombre = "";
-        this.nivel = 0;
+        this.nivel = 1;
     }
     
      public Jugador(String nombre, int nivel) {
